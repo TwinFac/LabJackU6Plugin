@@ -3,6 +3,14 @@ www.twinfac.com
 
 # LabJack U6 Sample Plugin for TwinFac
 
+## Installation
+
+1. Build the plugin
+2. Add LJUDDotNet.dll and TwinFac.LabJackUD.dll to a ZIP
+3. Upload ZIP file to your TwinFac instance using the plugin section
+4. Install the LabJack drivers on the client PC https://labjack.com/support/software
+5. Run the TwinFac client application
+
 ## Examples
 
 ### Toggle FIO2
@@ -29,7 +37,7 @@ function getHWVersion() {
 }
 ```
 
-### Sweep DAC0 from 0 - 5V reading value using AIN0
+### Sweep DAC0 from 0V to 5V reading the value using AIN0
 
 ```js
 var dacValue = 0;
