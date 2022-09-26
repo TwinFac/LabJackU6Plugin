@@ -13,6 +13,18 @@ www.twinfac.com
 
 ## Examples
 
+### Connect to U6 and get HW version
+
+```js
+labJackU6.invoke("Connect", "").then(result => {
+        labJackU6.invoke("GeHWVersion", "").then(result => {
+            var hwVersionResult = JSON.parse(result);
+            var hwVersion = JSON.parse(hwVersionResult.data);
+            console.log(`U6 HW Version: ${hwVersion.HWVersion}`);
+        });
+    });
+```
+
 ### Toggle FIO2
 
 ```js
@@ -28,7 +40,6 @@ function toggleFIO2() {
 
 ```js
 function getHWVersion() {
-
     labJackU6.invoke("GetHWVersion", "").then(result => {
         var hwVersionResult = JSON.parse(result);
         var hwVersion = JSON.parse(hwVersionResult.data);
